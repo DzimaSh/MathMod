@@ -1,0 +1,38 @@
+# Visual Studio Code
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# C++
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+build/
+bin/
+
+# Java
+*.class
+*.jar
+/target/
+/build/
+/out/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyzw
+*.pycachefile
+*.pyproj
+*.python-version
+
+# General
+.DS_Store
