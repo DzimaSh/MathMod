@@ -151,8 +151,8 @@ public class RandomNumberOperations {
         partB(gmm1);
         additionalOperation1(mcg1, 0.05);
         additionalOperation4(mcg1, 30);
-        // additionalOperation6(mcg1);
-        // additionalOperation7(mcg1, modulo1);
-        // additionalOperation8(gmm1, modulo1);
+        additionalOperation6(mcg1);
+        additionalOperation7(mcg1, modulo1);
+        additionalOperation8(gmm1, modulo1);
     }
 }
