@@ -12,7 +12,7 @@ This project implements two classes of random number generators: Multiplicative 
 - `Generator<T>`: An interface that defines a generic random number generator with two methods: `get()` and `reset()`.
 - `MultiplicativeCongruentialGenerator<T>`: A class that implements the `Generator<T>` interface and represents a MCG with the formula $$x_{n+1} = ax_n \mod m$$, where $a$ is the multiplier, $m$ is the modulus, and $x_0$ is the initial seed.
 - `GeneralizedMultiplicativeMethod<T>`: A class that implements the `Generator<T>` interface and represents a GMM with the formula $$x_{n+1} = x_{n-k}x_n \mod m$$, where $k$ is the lag, $m$ is the modulus, and $x_0, x_1, \dots, x_k$ are the initial seeds. This class uses two MCGs as the primary and secondary generators to fill the initial value table.
-- `PearsonsCorrelation`: A simple implementation of Pearson's correlation coefficient. This coefficient measures the linear relationship between two datasets. The formula for Pearson's correlation coefficient is: $$r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2 \sum_{i=1}^{n} (y_i - \bar{y})^2}}$$
+- `PearsonsCorrelation`: A simple implementation of Pearson's correlation coefficient. This coefficient measures the linear relationship between two datasets. The formula for Pearson's correlation coefficient is: $$r = \frac{\sum\limits_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum\limits_{i=1}^n (x_i - \bar{x})^2 \sum\limits_{i=1}^n (y_i - \bar{y})^2}}$$
 
 ### Methods
 
