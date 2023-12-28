@@ -2,6 +2,8 @@ package lab1;
 
 import generator.impl.GeneralizedMultiplicativeMethod;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -81,11 +83,29 @@ public class RandomNumberOperations {
         }
 
         PearsonsCorrelation correlation = new PearsonsCorrelation();
+        List<Double> correlations = new ArrayList<>();
         for (int tau = 1; tau <= tauMax; ++tau) {
             double[] array1 = sequence.subList(0, tauMax).stream().mapToDouble(Double::doubleValue).toArray();
             double[] array2 = sequence.subList(tau, tauMax + tau).stream().mapToDouble(Double::doubleValue).toArray();
             double corr = correlation.calculateCorrelation(array1, array2);
+
+            correlations.add(corr);
             System.out.println("r" + tau + " = " + corr);
+        }
+
+        saveCorrelations(correlations, "correlations.txt");
+    }
+
+    public static void saveCorrelations(List<Double> correlations, String filename) {
+        try {
+            PrintWriter writer = new PrintWriter(filename, "UTF-8");
+            for (Double correlation : correlations) {
+                writer.println(correlation);
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred while saving the correlations.");
+            e.printStackTrace();
         }
     }
 
@@ -104,8 +124,7 @@ public class RandomNumberOperations {
                 }
             }
         }
-    }
-    
+    }    
 
     public static void additionalOperation7(Generator<Double> mcg, long modulo) {
         System.out.println("Additional Operation 7");
@@ -132,8 +151,8 @@ public class RandomNumberOperations {
         partB(gmm1);
         additionalOperation1(mcg1, 0.05);
         additionalOperation4(mcg1, 30);
-        additionalOperation6(mcg1);
-        additionalOperation7(mcg1, modulo1);
-        additionalOperation8(gmm1, modulo1);
+        // additionalOperation6(mcg1);
+        // additionalOperation7(mcg1, modulo1);
+        // additionalOperation8(gmm1, modulo1);
     }
 }
