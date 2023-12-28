@@ -58,5 +58,4 @@ public class Main {
         Generator<Double> laplacian = new LaplacianGenerator<>(lambda, shift);
         test("Laplacian distribution test", laplacian, expectation, variance);
     }
-
 }
